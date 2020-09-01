@@ -1,9 +1,9 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Title } from './styles';
 
 const Dashboard: React.FunctionComponent = () => {
-	return <h1>Dashboard</h1>;
+	return <Title>Explore Repositórios no Github</Title>;
 };
 
 export default Dashboard;
