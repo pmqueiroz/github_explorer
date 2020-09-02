@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import { setLightness } from 'polished';
+
+interface LabelProps {
+	bgColor: string;
+}
 
 export const Header = styled.header`
 	display: flex;
@@ -60,17 +65,6 @@ export const IssueInfo = styled.section`
 
 			div.labels {
 				margin-left: 0;
-				span {
-					display: inline-block;
-					margin-top: 5px;
-					padding: 4px 8px;
-					background: #bdb2ff;
-					border-radius: 15px;
-
-					& + span {
-						margin-left: 10px;
-					}
-				}
 			}
 		}
 	}
@@ -161,5 +155,18 @@ export const RepoLoading = styled.section`
 				color: #6c6c80;
 			}
 		}
+	}
+`;
+
+export const Label = styled.span<LabelProps>`
+	display: inline-block;
+	margin-top: 5px;
+	padding: 4px 8px;
+	background: #bdb2ff;
+	background: ${props => setLightness(0.8, props.bgColor)};
+	border-radius: 15px;
+
+	& + span {
+		margin-left: 10px;
 	}
 `;
