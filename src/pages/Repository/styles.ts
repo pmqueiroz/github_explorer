@@ -119,3 +119,62 @@ export const Issues = styled.div`
 		}
 	}
 `;
+
+export const RepoLoading = styled.section`
+	margin-top: 80px;
+
+	header {
+		display: flex;
+		align-items: center;
+
+		div.img {
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			background: #cbcbd6;
+			margin-right: 24px;
+		}
+
+		div {
+			div.strong {
+				width: 400px;
+				height: 42px;
+				background: #cbcbd6;
+				border-radius: 7px;
+			}
+
+			div.p {
+				width: 560px;
+				height: 22px;
+				margin-top: 6px;
+				background: #cbcbd6;
+				border-radius: 4px;
+			}
+		}
+	}
+
+	ul {
+		display: flex;
+		list-style: none;
+		margin-top: 40px;
+
+		li {
+			& + li {
+				margin-left: 80px;
+			}
+
+			div.strong {
+				width: 60px;
+				height: 43px;
+				background: #cbcbd6;
+				border-radius: 4px;
+			}
+
+			span {
+				display: block;
+				margin-top: 4px;
+				color: #6c6c80;
+			}
+		}
+	}
+`;

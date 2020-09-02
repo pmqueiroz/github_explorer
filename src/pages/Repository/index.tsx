@@ -5,8 +5,7 @@ import api from '../../services/api';
 
 import logoImg from '../../assets/logo.svg';
 
-import { Header, RepositoryInfo, Issues } from './styles';
-import { Repositories } from '../Dashboard/styles';
+import { Header, RepositoryInfo, Issues, RepoLoading } from './styles';
 
 interface RepositoryParams {
 	repository: string;
@@ -58,7 +57,7 @@ const Repository: React.FunctionComponent = () => {
 				</Link>
 			</Header>
 
-			{repository && (
+			{repository ? (
 				<RepositoryInfo>
 					<header>
 						<img
@@ -85,6 +84,30 @@ const Repository: React.FunctionComponent = () => {
 						</li>
 					</ul>
 				</RepositoryInfo>
+			) : (
+				<RepoLoading>
+					<header>
+						<div className="img" />
+						<div>
+							<div className="strong" />
+							<div className="p" />
+						</div>
+					</header>
+					<ul>
+						<li>
+							<div className="strong" />
+							<span>Stars</span>
+						</li>
+						<li>
+							<div className="strong" />
+							<span>Forks</span>
+						</li>
+						<li>
+							<div className="strong" />
+							<span>Opened Issues</span>
+						</li>
+					</ul>
+				</RepoLoading>
 			)}
 
 			<Issues>
