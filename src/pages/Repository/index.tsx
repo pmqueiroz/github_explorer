@@ -25,6 +25,7 @@ interface Repository {
 
 interface Issue {
 	id: number;
+	number: number;
 	title: string;
 	html_url: string;
 	user: {
@@ -112,14 +113,17 @@ const Repository: React.FunctionComponent = () => {
 
 			<Issues>
 				{issues.map(issue => (
-					<a key={issue.id} href={issue.html_url}>
+					<Link
+						key={issue.id}
+						to={`/${repository?.full_name}/issue/${issue.number}`}
+					>
 						<div>
 							<strong>{issue.title}</strong>
 							<p>{issue.user.login}</p>
 						</div>
 
 						<FiChevronRight size={30} />
-					</a>
+					</Link>
 				))}
 			</Issues>
 		</>
