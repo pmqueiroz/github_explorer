@@ -78,23 +78,25 @@ const Dashboard: React.FunctionComponent = () => {
 			{inputError && <Error>{inputError}</Error>}
 
 			<Repositories>
-				{repositories.map(repository => (
-					<Link
-						key={repository.full_name}
-						to={`/explorer/${repository.full_name.toLowerCase()}`}
-					>
-						<img
-							src={repository.owner.avatar_url}
-							alt={repository.owner.login}
-						/>
-						<div>
-							<strong>{repository.full_name}</strong>
-							<p>{repository.description}</p>
-						</div>
+				{repositories
+					.map(repository => (
+						<Link
+							key={repository.full_name}
+							to={`/explorer/${repository.full_name.toLowerCase()}`}
+						>
+							<img
+								src={repository.owner.avatar_url}
+								alt={repository.owner.login}
+							/>
+							<div>
+								<strong>{repository.full_name}</strong>
+								<p>{repository.description}</p>
+							</div>
 
-						<FiChevronRight size={30} />
-					</Link>
-				))}
+							<FiChevronRight size={30} />
+						</Link>
+					))
+					.reverse()}
 			</Repositories>
 		</>
 	);
