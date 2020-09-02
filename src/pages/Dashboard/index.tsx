@@ -81,7 +81,7 @@ const Dashboard: React.FunctionComponent = () => {
 				{repositories.map(repository => (
 					<Link
 						key={repository.full_name}
-						to={`/explorer/${repository.full_name}`}
+						to={`/explorer/${repository.full_name.toLowerCase()}`}
 					>
 						<img
 							src={repository.owner.avatar_url}
