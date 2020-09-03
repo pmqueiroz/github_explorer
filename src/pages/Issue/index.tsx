@@ -48,7 +48,7 @@ const Issue: React.FunctionComponent = () => {
 		<>
 			<Header>
 				<img src={logoImg} alt="Github Explorer" />
-				<Link to="/">
+				<Link to={`/explorer/${params.repository}`}>
 					<FiChevronLeft size={16} />
 					Voltar
 				</Link>

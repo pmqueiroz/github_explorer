@@ -96,6 +96,11 @@ export const IssueInfo = styled.section`
 
 	div.issueBody {
 		margin-top: 80px;
+		p {
+			img {
+				max-width: 920px;
+			}
+		}
 	}
 `;
 
